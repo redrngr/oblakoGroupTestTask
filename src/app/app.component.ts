@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'oblacko';
+  title = 'oblakogroupTest'
+  isModalShow: boolean = false
+
+  showModal(value: boolean) {
+    this.isModalShow = value
+    document.body.classList.add('hide-overflow')
+  }
+
+  hideModal(value: boolean) {
+    this.isModalShow = value
+    document.body.classList.remove('hide-overflow')
+  }
 }

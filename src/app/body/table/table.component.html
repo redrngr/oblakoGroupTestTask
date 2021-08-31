@@ -1,0 +1,42 @@
+<div class="container--table">
+  <table class="table">
+    <thead class="table__head">
+      <tr tr class="table__head-tr">
+        <th class="table__th table__th--date">Дата начала</th>
+        <th class="table__th table__th--name">Название</th>
+        <th class="table__th table__th--members">Участников</th>
+        <th class="table__th table__th--couch">Тренер</th>
+        <th class="table__th table__th--progress"
+          [ngClass]="isSort ? isSortUp ? 'table__th--sort table__th--sortUp' : 'table__th--sort' : ''"
+          (click)="sortForProgress()">Прогресс</th>
+        <th class="table__th table__th--drop"></th>
+      </tr>
+    </thead>
+    <tbody class="table__body">
+      <tr class="table__body-tr" *ngFor="let item of events">
+        <td class="table__td table__td--date">{{item.date}}</td>
+        <td class="table__td table__td--name">{{item.name}}</td>
+        <td class="table__td table__td--members">{{item.members}}</td>
+        <td class="table__td table__td--couch">{{item.couch}}</td>
+        <td class="table__td table__td--progress">{{item.progres}} %</td>
+        <td class="table__td table__td--drop">
+          <div class="dropmenu">
+            <button class="dropmenu__btn">
+              <span class="icon-span"><i class="icon icon--dots"></i></span>
+            </button>
+            <nav class="dropmenu__content">
+              <ul class="dropmenu__content-list">
+                <li class="dropmenu__content-item">
+                  <a class="dropmenu__content-link" href="#">Редактировать</a>
+                </li>
+                <li class="dropmenu__content-item">
+                  <a class="dropmenu__content-link" href="#">Удалить слот</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

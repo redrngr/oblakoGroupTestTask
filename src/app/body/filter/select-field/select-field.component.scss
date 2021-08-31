@@ -1,0 +1,95 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.field--active {
+  border-color: #1071ff;
+}
+
+.field__label {
+  display: flex;
+  align-items: center;
+  padding-bottom: 2px;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.field__select-drop {
+  position: relative;
+}
+
+.field__drop-head {
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 6px;
+  padding-right: 18px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.field__drop-head--open {
+  & .icon--drop {
+    transform: rotate(180deg);
+  }
+}
+
+.icon {
+  position: absolute;
+  z-index: 1;
+  user-select: none;
+}
+
+.icon--drop {
+  right: 0;
+  bottom: 35%;
+  padding: 0 3px;
+  content: url("../../../../assets/icons/select.svg");
+  transition: 0.2s ease-in;
+}
+
+.field__drop-list {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  max-height: 205px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 100;
+  margin: 0;
+  padding: 8px 0;
+  scrollbar-color: rgba(0, 0, 0, 0.05);
+  scrollbar-width: thin;
+  overscroll-behavior: contain;
+}
+
+.field__drop-list::-webkit-scrollbar {
+  width: 7px;
+  background-color: #f8f9fa;
+  padding: 5px;
+}
+
+.field__drop-list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #d9d9d9;
+}
+
+.field__drop-item {
+  position: relative;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.field__drop-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}

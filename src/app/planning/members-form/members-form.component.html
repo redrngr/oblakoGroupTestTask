@@ -1,0 +1,54 @@
+<div class="members" [ngClass]="tab === 'members' ? 'members--active' : ''">
+  <div class="members__employee-select">
+    <h1 class="modal__h modal__h--form">Доступные участники</h1>
+    <app-filter [data]="data" [setFilter]="setFilter"></app-filter>
+    <div class="members__employee-list">
+      <div class="members__checkbox-block">
+        <input class="members__checkbox" type="checkbox" name="all" id="all">
+        <label class="checkbox-label" for="all">Все пользователи</label>
+      </div>
+      <div class="members__checkbox-block">
+        <input class="members__checkbox" type="checkbox" name="employee1" id="employee1">
+        <label class="checkbox-label" for="employee1">Максим Вильниц</label>
+      </div>
+      <div class="members__checkbox-block">
+        <input class="members__checkbox" type="checkbox" name="employee2" id="employee2">
+        <label class="checkbox-label" for="employee2">Ольга Крышкова</label>
+      </div>
+      <div class="members__checkbox-block">
+        <input class="members__checkbox" type="checkbox" name="employee3" id="employee3">
+        <label class="checkbox-label" for="employee3">Юлия Грунина</label>
+      </div>
+      <div class="members__checkbox-block">
+        <input class="members__checkbox" type="checkbox" name="employee4" id="employee4">
+        <label class="checkbox-label" for="employee4">Марат Большаков</label>
+      </div>
+      <div class="members__checkbox-block">
+        <input class="members__checkbox" type="checkbox" name="employee5" id="employee5">
+        <label class="checkbox-label" for="employee5">Светлана Иванова</label>
+      </div>
+      <div class="members__checkbox-block">
+        <input class="members__checkbox" type="checkbox" name="employee6" id="employee6">
+        <label class="checkbox-label" for="employee6">Данил Горбунов</label>
+      </div>
+      <div class="members__checkbox-block">
+        <input class="members__checkbox" type="checkbox" name="employee7" id="employee7">
+        <label class="checkbox-label" for="employee7">Дарья Васильева</label>
+      </div>
+      <div class="members__checkbox-block">
+        <input class="members__checkbox" type="checkbox" name="employee8" id="employee8">
+        <label class="checkbox-label" for="employee8">Владимир Силеванов</label>
+      </div>
+    </div>
+  </div>
+  <div class="members__employee-selected">
+    <h1 class="modal__h modal__h--form">Участники мероприятия</h1>
+    <div class="members__selected-field">
+      <div class="selected-field__block">
+        <p class="selected-field__text">
+          Наполните группу, перетаскивая участников <br> из&nbsp;списка доступных в&nbsp;левой колонке
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="filter">
+  <form class="filter__form">
+    <div class="filter__form-items">
+      <div class="filter__form-item">
+        <div class="filter__form-search">
+          <span class="icon icon--search"></span>
+          <input class="filter__form-input" type="search" placeholder="Поиск">
+        </div>
+      </div>
+      <div class="filter__form-item">
+        <app-select-field [data]="data[0]"></app-select-field>
+      </div>
+      <div class="filter__form-item">
+        <app-select-field [data]="data[1]"></app-select-field>
+      </div>
+      <div class="filter__form-item">
+        <app-select-field [data]="data[2]"></app-select-field>
+      </div>
+    </div>
+    <div class="filter__settings">
+      <span class="filter__result-count">{{setFilter.counter}}</span>
+      <div class="filter__settings-block">
+        <div class="filter__settings-list">
+          <div class="filter__btn-block filter__btn-block--settings" (click)="showSettings()">
+            <span class="icon icon--settings"></span>
+            <button class="filter__btn filter__btn--settings" type="button">{{setFilter.btnName}}</button>
+          </div>
+          <ul class="select-block__list" *ngIf="isSettingsShow">
+            <h4 class="select-block__title">Системные поля</h4>
+            <li class="select-block__item" *ngFor="let item of setFilter.fields.main | keyvalue">
+              <input class="select-block__checkbox" type="checkbox" name={{item.key}} id={{item.key}} checked>
+              <label class="select-block__label" for={{item.key}}>{{item.value}}</label>
+            </li>
+            <h4 class="select-block__title">Дополнительные поля</h4>
+            <li class="select-block__item" *ngFor="let item of setFilter.fields.extra | keyvalue">
+              <input class="select-block__checkbox" type="checkbox" name={{item.key}} id={{item.key}}>
+              <label class="select-block__label" for={{item.key}}>{{item.value}}</label>
+            </li>
+          </ul>
+        </div>
+        <div class="filter__btn-block filter__btn-block--reset">
+          <span class="icon icon--reset"></span>
+          <button class="filter__btn filter__btn--reset" type="reset">Сбросить</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

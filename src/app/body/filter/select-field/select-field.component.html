@@ -1,0 +1,12 @@
+<div class="field" [ngClass]="data.isShow ? 'field--active' : ''">
+  <label class="field__label" for="form-select">{{data.name}}</label>
+  <input class="field__select" type="hidden" name="" id="form-select">
+  <div class="field__select-drop">
+    <div class="field__drop-head" (click)="toggleDropList()" [ngClass]="data.isShow ? 'field__drop-head--open' : ''">
+      {{currentValue}}<span class="icon icon--drop"></span>
+    </div>
+    <ul class="field__drop-list" id="0" *ngIf="data.isShow" (click)="setValue($event)" #list>
+      <li class="field__drop-item" *ngFor="let item of data.values">{{item}}</li>
+    </ul>
+  </div>
+</div>

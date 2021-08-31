@@ -1,0 +1,110 @@
+.modal {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.08);
+  max-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  overflow-y: scroll;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.modal--active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__form {
+  width: 860px;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 3px;
+  position: relative;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.modal__form-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 24px 30px 24px;
+}
+
+.modal__h {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.modal__h--form {
+  font-size: 14px;
+  line-height: 18px;
+  padding-bottom: 26px;
+}
+
+.modal__save-btn {
+  padding-right: 26px;
+}
+
+.save-icon::before {
+  content: url("../../assets/icons/ok.svg");
+}
+
+.cancel-icon::before {
+  content: url("../../assets/icons/reset.svg");
+}
+
+.modal__tabs {
+  padding-bottom: 32px;
+}
+
+.tabs {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.tabs__form {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.tabs__radio {
+  display: none;
+  text-align: center;
+}
+
+.tabs__radio-label {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  padding-bottom: 7px;
+  color: rgba(0, 0, 0, 0.54);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.25s ease-in-out;
+}
+
+.tabs__radio:checked + .tabs__radio-label {
+  color: rgba(0, 0, 0, 0.87);
+  border-bottom-color: #1071ff;
+  border-radius: 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    background: rgba(255, 255, 255, 1);
+    .modal__form {
+      width: 100%;
+    }
+  }
+}

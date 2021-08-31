@@ -1,0 +1,107 @@
+.event {
+  padding-bottom: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.event__label {
+  position: relative;
+  display: block;
+  text-align: left;
+  padding-left: 32px;
+
+  .event__label-text {
+    cursor: text;
+    color: rgba(0, 0, 0, 0.38);
+    transform: translateY(-24px);
+    transform: translateY(-24px);
+    -moz-transform: translateY(-24px);
+    -ms-transform: translateY(-24px);
+    -webkit-transform: translateY(-24px);
+    transition: all 0.3s;
+  }
+
+  .event__input {
+    width: 100%;
+    background-color: transparent;
+    outline: 0;
+    padding: 0;
+    padding-top: 16px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+
+    &:focus + .event__label-text {
+      padding: 2px 0;
+      font-size: 10px;
+      line-height: 12px;
+      transform: translateY(-40px);
+      -moz-transform: translateY(-40px);
+      -ms-transform: translateY(-40px);
+      -webkit-transform: translateY(-40px);
+      color: rgba(0, 0, 0, 0.54);
+    }
+
+    &:valid + .event__label-text {
+      padding: 2px 0;
+      font-size: 10px;
+      line-height: 12px;
+      transform: translateY(-40px);
+      -moz-transform: translateY(-40px);
+      -ms-transform: translateY(-40px);
+      -webkit-transform: translateY(-40px);
+      color: rgba(0, 0, 0, 0.54);
+    }
+  }
+}
+
+.evevt__label-nopadding {
+  padding: 0;
+}
+
+.event__setting-event {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-left: 48px;
+}
+
+.event__setting-block {
+  flex: 1 1 auto;
+}
+
+.event__setting-wrapper {
+  min-width: 246px;
+  position: relative;
+  display: inline-block;
+}
+
+.icon {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  bottom: 22px;
+  left: 0;
+}
+
+.icon--date {
+  content: url("../../../../assets/icons/date.svg");
+}
+.icon--time {
+  content: url("../../../../assets/icons/time.svg");
+}
+.icon--couch {
+  content: url("../../../../assets/icons/couch.svg");
+}
+
+@media screen and (max-width: 768px) {
+  .event__setting-event {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-left: 0;
+  }
+}

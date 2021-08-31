@@ -1,0 +1,45 @@
+<main class="main">
+  <div class="container">
+    <div class="main__wrapper">
+      <div class="main__tabs">
+        <div class="main__tabs-block">
+          <input class="main__tabs-radio" type="radio" name="tab" id="group" checked>
+          <label class="main__tabs-label" for="group">Групповое</label>
+          <input class="main__tabs-radio" type="radio" name="tab" id="personal">
+          <label class="main__tabs-label" for="personal">Индивидуальное</label>
+        </div>
+      </div>
+    </div>
+    <div class="main__mobile--show">
+      <div class="main__search-wrapper">
+        <div class="main__search main__search--mobile">
+          <div class="main__search-block">
+            <span class="icon icon--search"></span>
+            <input class="main__search-input" type="search" placeholder="Поиск">
+            <span class="icon icon--settings" (click)="showSettings()"></span>
+            <div class="main__settings" *ngIf="isSettingsShow">
+              <form class="main__settings-form">
+                <div class="main__settings-content">
+                  <div class="main__settings-block">
+                    <h1 class="main__settings-title">Настройки</h1>
+                    <span class="icon--save" (click)="showSettings()"></span>
+                  </div>
+                  <div class="container">
+                    <app-filter [setFilter]="setFilter"></app-filter>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__sort-wrapper">
+        <div class="main__sort-field">
+          <app-select-field [data]="data"></app-select-field>
+        </div>
+      </div>
+    </div>
+    <app-filter class="filter filter--show"></app-filter>
+  </div>
+  <app-table></app-table>
+</main>

@@ -1,0 +1,31 @@
+<div class="modal" [ngClass]="isShow ? 'modal--active' : ''">
+  <form class="modal__form">
+    <div class="modal__form-content">
+      <header class="modal__form-header">
+        <h1 class="modal__h">Планирование</h1>
+        <div class="modal__btns">
+          <button class="modal__save-btn" type="button" (click)="hideModal(false)">
+            <i class="save-icon"></i>
+          </button>
+          <button class="modal__cancel-btn" type="reset" (click)="hideModal(false)">
+            <i class="cancel-icon"></i>
+          </button>
+        </div>
+      </header>
+      <main class="modal__main">
+        <div class="modal__tabs">
+          <div class="tabs">
+            <form class="tabs__form">
+              <input class="tabs__radio" (click)="checkedMainTab()" type="radio" name="tab" id="main" checked>
+              <label class="tabs__radio-label" for="main">Основное</label>
+              <input class="tabs__radio" (click)="checkedMembersTab()" type="radio" name="tab" id="members">
+              <label class="tabs__radio-label" for="members">Участники</label>
+            </form>
+          </div>
+        </div>
+        <app-main-form [tab]='tab'></app-main-form>
+        <app-members-form [tab]='tab'></app-members-form>
+      </main>
+    </div>
+  </form>
+</div>

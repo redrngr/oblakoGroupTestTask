@@ -1,0 +1,185 @@
+.container--table {
+  max-width: 1162px;
+  margin: 0 auto;
+  padding-left: 10px;
+}
+
+.table {
+  width: 100%;
+}
+
+.table__body-tr:hover {
+  .table__td {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  .dropmenu {
+    visibility: visible;
+  }
+}
+
+.table__th {
+  text-align: left;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(0, 0, 0, 0.54);
+  padding-bottom: 9px;
+  cursor: pointer;
+}
+
+.table__th:first-child {
+  padding-left: 8px;
+}
+
+.table__th--sort {
+  position: relative;
+  user-select: none;
+}
+
+.table__th--sort::after {
+  content: url("../../../assets/icons/sort.svg");
+  padding-left: 6px;
+  position: absolute;
+}
+
+.table__th--sortUp::after {
+  content: url("../../../assets/icons/sort-reverse.svg");
+}
+
+.table__td--date {
+  border-radius: 4px 0 0 4px;
+  padding-left: 8px;
+  min-width: 86px;
+  width: 110px;
+}
+
+.table__td--name {
+  width: 576px;
+}
+
+.table__td--members {
+  min-width: 70px;
+  width: 136px;
+}
+
+.table__td--couch {
+  min-width: 50px;
+  width: 132px;
+}
+
+.table__td--progress {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.table__td--progress::before {
+  content: url("../../../assets/icons/progress.svg");
+  padding-right: 7px;
+}
+
+.table__td--drop {
+  border-radius: 0 4px 4px 0;
+  text-align: right;
+  padding-right: 8px;
+}
+
+.dropmenu {
+  position: relative;
+  display: inline-block;
+  visibility: hidden;
+  padding: 6px 0px;
+}
+
+.dropmenu__btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.dropmenu__btn:hover {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+
+.icon-span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon--dots {
+  content: url("../../../assets/icons/dots.svg");
+}
+
+.dropmenu__content {
+  display: none;
+  position: absolute;
+  min-width: 162px;
+  background-color: #fff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  z-index: 1;
+  right: 0px;
+  bottom: 44px;
+  padding: 8px 0;
+}
+
+.dropmenu__content-item {
+  padding: 10px 17px;
+  text-align: left;
+}
+
+.dropmenu__content-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.dropmenu__content-item:nth-child(1)::before {
+  padding-right: 18px;
+  content: url("../../../assets/icons/edit.svg");
+}
+
+.dropmenu__content-item:nth-child(2)::before {
+  padding-right: 18px;
+  content: url("../../../assets/icons/delete.svg");
+}
+
+.dropmenu:hover .dropmenu__content {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .table {
+    overflow-y: scroll;
+    .table__td {
+      box-sizing: border-box;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-right: 6px;
+      word-break: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .table__td--date {
+      width: 20%;
+    }
+    .table__td--name {
+      width: 50%;
+    }
+    .table__td--members {
+      width: 10%;
+    }
+    .table__td--progress {
+      width: 20%;
+    }
+    .table__th--couch {
+      display: none;
+    }
+    .table__td--couch {
+      display: none;
+    }
+    .table__th--drop {
+      display: none;
+    }
+    .table__td--drop {
+      display: none;
+    }
+  }
+}

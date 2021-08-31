@@ -1,0 +1,76 @@
+.main-form {
+  display: none;
+  min-width: 100%;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.main-form--active {
+  display: block;
+}
+
+.main-form__fileds {
+  width: 100%;
+  padding-bottom: 52px;
+}
+.main-form__fields-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.modal__title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.modal__title--form {
+  font-size: 14px;
+  line-height: 18px;
+  padding-bottom: 26px;
+}
+
+.main-form__conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+.main-form__radio {
+  display: none;
+}
+
+.radio-label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  color: rgba(0, 0, 0, 0.54);
+  user-select: none;
+  padding-left: 36px;
+}
+
+.radio-label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  background: url("../../../assets/icons/radio-none.svg") 0 0 no-repeat;
+}
+
+.main-form__radio:checked + .radio-label::before {
+  background: url("../../../assets/icons/radio-checked.svg") 0 0 no-repeat;
+}
+
+.main-form__radio:checked + .radio-label {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+@media screen and (max-width: 768px) {
+  .main-form {
+    padding: 0 12px;
+  }
+}
